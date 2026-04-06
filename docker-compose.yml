@@ -1,0 +1,15 @@
+services:
+  aerospike:
+    image: aerospike/aerospike-server:8.0.0.14
+    container_name: aerospike-8
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+      - "3002:3002"
+    environment:
+      - NAMESPACE=test
+    volumes:
+      - aerospike-data:/opt/aerospike/data
+
+volumes:
+  aerospike-data:
